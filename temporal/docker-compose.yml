@@ -1,0 +1,10 @@
+services:
+  temporal:
+    image: temporalio/ui:2.47.3
+    container_name: temporal
+    restart: always
+    environment:
+      # Point to your Temporal server's frontend address
+      - TEMPORAL_ADDRESS=temporal-server:7233
+    ports:
+      - "8083:8080"
