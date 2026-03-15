@@ -6,5 +6,7 @@ services:
     environment:
       # Point to your Temporal server's frontend address
       - TEMPORAL_ADDRESS=temporal-server:7233
+      - TEMPORAL_UI_PUBLIC_PATH=/temporal
+      - TEMPORAL_UI_ENABLED=true
     ports:
       - "8083:8080"

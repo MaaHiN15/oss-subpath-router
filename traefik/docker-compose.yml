@@ -9,7 +9,10 @@ services:
       - '--providers.docker=true'
       - '--providers.docker.exposedbydefault=false'
       - '--entrypoints.web.address=:80'
+      - '--entrypoints.traefik.address=:8080'
+      - '--providers.file.directory=/etc/traefik/conf.d'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/config:/etc/traefik/conf.d:ro
     ports:
       - "8084:8080"
